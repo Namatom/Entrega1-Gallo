@@ -1,0 +1,34 @@
+{% extends "ComidaTara/padre.html" %} 
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Ingreso de plato principal</h1>
+<form action="{% url 'principal' %}" method="POST">{% csrf_token %}
+
+    <table>
+        {{formulario.as_table}}
+
+
+
+    </table>
+    <input type="submit" value="Enviar">
+
+</form>
+<h1>Busqueda de plato principal</h1>
+
+<form action="{% url 'buscarPrincipal' %}" method="GET"> 
+   
+    <p><input type="text" name="nombre" id="nombre" placeholder="Buscar plato principal"></p>
+    <p><input type="submit" value="Buscar"></p>
+ </form>
+
+ {% if respuesta %}
+      <p>{{respuesta}}</p>
+
+{% endif %}
+{% endblock %}
+
+{% block titulo %}
+<h1>Bienvenidos a los platos principales de Tarascon</h1>
+{% endblock %}

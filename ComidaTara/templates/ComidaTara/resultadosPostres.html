@@ -1,0 +1,25 @@
+{% extends "ComidaTara/padre.html" %} 
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Postres encontrados:  </h1>
+
+{% if postres %}
+<ul>
+{% for postre in postres %}
+    <li>{{postre.nombre}}. {{postre.descripcion}}. Tiene un precio de {{postre.precio}} pesos.</li>
+
+{% endfor %}
+
+</ul>
+{% else %}
+
+<p>No hay postres encontrados</p>
+
+{% endif %}
+{% endblock %}
+
+{% block titulo %}
+<h1>Bienvenidos a Tarascon</h1>
+{% endblock %}

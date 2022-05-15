@@ -1,0 +1,25 @@
+{% extends "ComidaTara/padre.html" %} 
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Principales encontrados:  </h1>
+
+{% if principales %}
+<ul>
+{% for principal in principales %}
+    <li>{{principal.nombre}}. {{principal.descripcion}}. Tiene un precio de {{principal.precio}} pesos.</li>
+
+{% endfor %}
+
+</ul>
+{% else %}
+
+<p>No hay platos principales encontrados</p>
+
+{% endif %}
+{% endblock %}
+
+{% block titulo %}
+<h1>Bienvenidos a Tarascon</h1>
+{% endblock %}

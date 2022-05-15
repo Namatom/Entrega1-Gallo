@@ -1,0 +1,41 @@
+{% extends "ComidaTara/padre.html" %} 
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1>Ingreso de entrada</h1>
+<form action="{% url 'entrada' %}" method="POST">{% csrf_token %}
+
+    <table>
+        {{formulario.as_table}}
+
+
+
+    </table>
+    <input type="submit" value="Enviar">
+
+
+
+
+</form>
+
+<h1>Busqueda de Entrada</h1>
+<form action="{% url 'buscar' %}" method="GET"> 
+   
+    <p><input type="text" name="nombre" id="nombre" placeholder="Buscar entrada"></p>
+    <p><input type="submit" value="Buscar"></p>
+ </form>
+
+ {% if respuesta %}
+      <p>{{respuesta}}</p>
+
+{% endif %}
+
+
+
+{% endblock %}
+
+{% block titulo %}
+<h1>Bienvenidos a las entradas de Tarascon</h1>
+{% endblock %}
