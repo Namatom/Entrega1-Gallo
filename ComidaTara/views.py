@@ -69,7 +69,7 @@ def buscar(request):
         return render(request, 'ComidaTara/resultados.html', {'entradas':entradas})
     else:
         respuesta="No se ingreso nada"
-        return render(request, "ComidaTara/busquedaEntrada.html", {'respuesta':respuesta})
+        return render(request, "ComidaTara/entradas.html", {'respuesta':respuesta})
 
 def buscarPrincipal(request):
     if request.GET['nombre']:
@@ -78,7 +78,7 @@ def buscarPrincipal(request):
         return render(request, 'ComidaTara/resultadosPrincipales.html', {'principales':principales})
     else:
         respuesta="No se ingreso nada"
-        return render(request, "ComidaTara/busquedaPrincipales.html", {'respuesta':respuesta})
+        return render(request, "ComidaTara/principales.html", {'respuesta':respuesta})
 
 def buscarPostre(request):
     if request.GET['nombre']:
@@ -87,4 +87,4 @@ def buscarPostre(request):
         return render(request, 'ComidaTara/resultadosPostres.html', {'postres':postres})
     else:
         respuesta="No se ingreso nada"
-        return render(request, "ComidaTara/busquedaPostres.html", {'respuesta':respuesta})
+        return render(request, "ComidaTara/postres.html", {'respuesta':respuesta})
